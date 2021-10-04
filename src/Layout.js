@@ -1,14 +1,15 @@
 import { BrowserRouter , Route, Switch } from "react-router-dom";
 import ViewUsers from "./views/ViewUsers";
 import EditUser from "./views/EditUser";
+import injectContext from "./store/appContext";
 
-export default function Layout() {
+function Layout() {
     return (
         <>
           <BrowserRouter>
              
             <Switch>
-                <Route exact patch="/">
+                <Route exact path="/">
                     <ViewUsers />
                 </Route>
                
@@ -23,3 +24,4 @@ export default function Layout() {
         </>
     )    
 }
+export default injectContext(Layout);
